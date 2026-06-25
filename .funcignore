@@ -1,0 +1,4 @@
+.git/
+.github/
+*.PublishSettings
+.DS_Store
