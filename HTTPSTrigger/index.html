@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Formatter UI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>JSON Formatter</h1>
+    <label class="field-label" for="inputText">Enter text</label>
+    <textarea id="inputText" placeholder="Paste text here..."></textarea>
+
+    <label class="field-label" for="operationSelect">Choose operation</label>
+    <select id="operationSelect">
+      <option value="uppercase">Uppercase</option>
+      <option value="lowercase">Lowercase</option>
+      <option value="reverse">Reverse</option>
+      <option value="word count">Word Count</option>
+    </select>
+
+    <button id="submitBtn">Submit</button>
+
+    <div id="resultCard">
+      <h2>Result</h2>
+      <pre id="resultOutput">No result yet. Submit the form to see output.</pre>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
   "description": "Azure Function App for JSON formatting",
   "main": "HTTPSTrigger/index.js",
   "scripts": {
-    "start": "func start"
+    "start": "node HTTPSTrigger/index.js"
   },
   "engines": {
     "node": "18"
