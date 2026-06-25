@@ -1,0 +1,32 @@
+name: Azure Function App Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository code so the workflow can access it.
+      - name: 'Checkout repository'
+        uses: actions/checkout@v4
+
+      # Set up Node.js 18 for the build and deployment steps.
+      - name: 'Set up Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # Install npm dependencies so the Function App can be built and deployed.
+      - name: 'Install dependencies'
+        run: npm install
+
+      # Deploy the Azure Function App using the publish profile stored in a GitHub secret.
+      - name: 'Deploy to Azure Function App'
+        uses: azure/functions-action@v1
+        with:
+          app-name: 'func-workshop-sarray'
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+          package: '.'
